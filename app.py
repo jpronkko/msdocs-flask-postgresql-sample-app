@@ -25,6 +25,11 @@ app.config.update(
     SQLALCHEMY_TRACK_MODIFICATIONS=False,
 )
 
+if app.config.get('DATABASE_URI') is None:
+    print("DATABASE_URI is not set.")
+else:
+    print("DATABASE_URI is set.")
+    
 # Initialize the database connection
 db = SQLAlchemy(app)
 
